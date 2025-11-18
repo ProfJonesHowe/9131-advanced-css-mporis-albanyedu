@@ -79,35 +79,52 @@ body
 	color: #545BE0;
 }
 
-/* mobile */
-.menu-toggle 
+/* Hide the menu checkbox by default*/	
+.menu-toggle
 {
 	display: none;
 }
 
-.menu-btn 
+.menu-btn
 {
 	display: none;
 	font-size: 2rem;
-	color: var(--primary);
+	color: var(--text);
 	cursor: pointer;
 	user-select: none;
 }
 
+/* Mobile styles - everything under 768 px wide */
 @media (max-width: 768px)
 {
-	.menu-btn 
-	{
-		display: block;
-	}
 
+/* Show the menu button on smaller sreens */
+.menu-btn
+{
+	display: block;
+}
 
+/* Stack the navigation vertically and hide it by default */
 .site-nav ul
 {
 	flex-direction: column;
+	position: absolute;
+	top: 60px;
+	right: 0;
+	background: #111624;
+	width: 200px;
+	padding: 1rem;
+	border-radius: 8px;
+	display: none;
+}
+/* When the checkbox is checked, show the menu */
+.menu-toggle:checked + .menu-btn + .site-nav ul
+{
+	display: flex;
+}
+
+
 	
-
-
 	
 
 
